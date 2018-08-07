@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite" verbose="5">
   <test name="Test">
-  <parameter name="doctorName" value="Dr.Smith" />
+  <parameter name="doctorName" value="Dr.Beth" />
     <classes>
       <class name="org.iit.mmp.test.ScheduleAppointment"/>
     </classes>
