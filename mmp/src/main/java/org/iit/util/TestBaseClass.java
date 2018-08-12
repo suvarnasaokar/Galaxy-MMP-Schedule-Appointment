@@ -1,18 +1,43 @@
 package org.iit.util;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 
 public class TestBaseClass {
 
-	protected WebDriver driver;
-	@BeforeClass
-	public void launchBrowser()
-	{
-		System.setProperty("webdriver.gecko.driver","geckodriver.exe");
-		FirefoxDriver driver = new FirefoxDriver();
-		driver.get("http://96.84.175.78/MMP-Release2-Integrated-Build.6.8.000/portal/sheduleappointments.php");
 	
-	}
-}
+		protected WebDriver driver;
+		@Parameters({"sBrowsertype","sURL"})
+		@BeforeClass
+		public void launchBrowser(String sBrowsertype ,String sURL)
+
+		{
+			
+			if(sBrowsertype.equals("Chrome"))
+			{
+				System.setProperty("webdriver.chrome.driver" , "chromedriver.exe");
+				 driver = new ChromeDriver();
+				
+			}
+			
+			else if(sBrowsertype.equals("FireFox"))
+			{
+				System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
+				driver = new FirefoxDriver();
+			}
+			
+
+				
+			
+			driver.get(sURL);
+			driver.manage().window().maximize();
+			
+
+		}
+
+
+		}
+
