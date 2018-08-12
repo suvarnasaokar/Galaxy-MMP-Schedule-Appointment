@@ -22,7 +22,7 @@ public class ScheduleAppointmentPage extends TestBaseClass {
 	   // driver.findElement(By.xpath("//span[contains(text(),'Schedule')]")).click();
 		driver.findElement(By.xpath("//input[@value='Create new appointment']")).click();
 		driver.findElement(By.xpath("//h4[text()='"+doctorName+"']/ancestor::ul/following-sibling::button")).click();
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 		driver.switchTo().frame(driver.findElement(By.id("myframe")));
 		driver.findElement(By.id("datepicker")).click();
 		
@@ -41,7 +41,7 @@ public class ScheduleAppointmentPage extends TestBaseClass {
 	}
 	public boolean verifyAppointmentDetails(String symptom) throws InterruptedException
 	{ 
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 		WebElement e = driver.findElement(By.xpath("//table[@class='table']/tbody/tr[1]"));
 		boolean result = e.getText().contains("fever");
 		System.out.println("result" + result);
